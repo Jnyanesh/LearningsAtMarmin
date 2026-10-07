@@ -1,2 +1,6 @@
-def cube(number):
-	return number ** 3
+class Cube:
+    def __init__(self, number):
+        self.number = number
+    
+    def cube(self):
+        return self.number ** 3
