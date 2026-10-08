@@ -1,30 +1,43 @@
 package com.marmin;
 
 import org.junit.jupiter.api.Test;
+
+import java.beans.Transient;
+
 import org.junit.jupiter.api.Assertions;
+import java.util.*;
 
 class TestDivisibilityCheck {
 	DivisibilityCheck divisible = new DivisibilityCheck();
+	Random rand = new Random();
+
+	
+	@Test
+	void TestRandomDoubleMultipleOf6isNotDivisibleBy2and3(){
+		double random = rand.nextDouble()*6;
+		Assertions.assertFalse(divisible.isDivisible(random));
+	}
+
     @Test
-	void int12IsDivisibleBy2And3(){
+	void Testint12IsDivisibleBy2And3(){
 		DivisibilityCheck divisible = new DivisibilityCheck();
 		Assertions.assertTrue(divisible.isDivisible(12));
 	}
 	@Test
-	void int24isDivisibleBy2And3(){
+	void Testint24isDivisibleBy2And3(){
 		DivisibilityCheck divisible = new DivisibilityCheck();
 		Assertions.assertTrue(divisible.isDivisible(24));
 	}
 	@Test
-	void neg24isDivisibleBy2and3(){
+	void Testneg24isDivisibleBy2and3(){
 		Assertions.assertTrue(divisible.isDivisible(-24));
 	}
 	@Test
-	void deci24isDivisibleBy2and3(){
-		Assertions.assertTrue(divisible.isDivisible(24.24));
+	void Testdeci24isDivisibleBy2and3(){
+		Assertions.assertFalse(divisible.isDivisible(24.24));
 	}
 	@Test
-	void int888isDivisibleBy2and3(){
+	void Testint888isDivisibleBy2and3(){
 		Assertions.assertTrue(divisible.isDivisible(888));
 	}
 
