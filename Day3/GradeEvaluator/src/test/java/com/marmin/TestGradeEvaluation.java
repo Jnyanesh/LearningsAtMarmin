@@ -2,8 +2,6 @@ package com.marmin;
 
 import org.junit.jupiter.api.Test;
 
-import java.beans.Transient;
-
 import org.junit.jupiter.api.Assertions;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +29,7 @@ class TestGradeEvaluation
     }
 
     @Test
-    void TestUnusualValues(){
+    void TestUnusualValue(){
         ArrayList<Integer> grade = new ArrayList<>(Arrays.asList(-1,1001,95,12,77,-999));
         ArrayList<String> expected = new ArrayList<>(Arrays.asList("Invalid","Invalid","Distinction","Fail","Distinction","Invalid"));
         ArrayList<String> actual = eval.EvaluateGrades(grade);
@@ -40,7 +38,7 @@ class TestGradeEvaluation
     }
     
     @Test
-    void TestInvalidsValues(){
+    void TestInvalidValues(){
         ArrayList<Integer> grade = new ArrayList<>(Arrays.asList(-15,10501,1213,-999));
         ArrayList<String> expected = new ArrayList<>(Arrays.asList("Invalid","Invalid","Invalid","Invalid"));
         ArrayList<String> actual = eval.EvaluateGrades(grade);
